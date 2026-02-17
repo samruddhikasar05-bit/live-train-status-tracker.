@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Train Status Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🚆 Live Train Status Tracker</h1>
+
+    <form method="POST">
+        <input type="text" name="train" placeholder="Enter Train Number" required>
+        <button type="submit">Check Status</button>
+    </form>
+
+    {% if status %}
+        <div class="result">
+            <h2>{{ status }}</h2>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
